@@ -18,8 +18,8 @@ import java.util.Scanner;
  */
 public class Service {
     int option1,option2;
-    private static File file;
-    private static Properties properties;
+    //private static File file;
+    //private static Properties properties;
     private static  String newLine = System.lineSeparator();
     private static  Scanner scanner = new Scanner(System.in);
     private String fileName;

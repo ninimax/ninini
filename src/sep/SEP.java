@@ -16,7 +16,7 @@ public class SEP {
 
     private static File file;
     private static Properties properties;
-    private static int recordNbr;
+    //private static int recordNbr;
     private static String newLine = System.lineSeparator();
     private static Scanner scanner = new Scanner(System.in);
 
@@ -80,50 +80,14 @@ public class SEP {
 int option;
             switch (title) {
                 case "admin":
-                    System.out.println("List of documents in current folder:");
-                    getDirectoryList("./eventPlans");
-
-                    System.out.println("Enter fileName:");
-                    fileName = scanner.next();
-                    reviewFile("./eventPlans/" + fileName);
+                    admin newadmin=new admin();
+                    newadmin.process();
                     break;
                 case "production":
-
                     break;
                 case "financial":
-                    
-                    
-                    System.out.println("What do you want to do?! 1-review 2-comment 0-quit");
-                    option = scanner.nextInt();
-                    
-                    switch(option){
-                
-                    case 0:
-                    break;
-                    case 1:
-                         System.out.println("List of documents in current folder:");
-                        getDirectoryList("./eventPlans");
-
-                        System.out.println("Enter fileName:");
-                        fileName = scanner.next();
-
-                        reviewFile("./eventPlans/" + fileName);
-                        break;
-                    case 2:
-                        System.out.println("List of documents in current folder:");
-                        getDirectoryList("./eventPlans");
-                        System.out.println("Enter fileName:");
-                        fileName = scanner.next();
-                        comment("./eventPlans/" + fileName);
-                        
-                        
-                        break;
-                        default:System.out.println("No such option!");
-                    }
-                    
-                   
-                    
-                    
+                    financial newfinancial=new financial();
+                    newfinancial.process();
                     break;
                 case "customerService":
 
@@ -150,7 +114,7 @@ int option;
         }
 
     }
-
+    /*
     private static void addNewCredentials(
             String username, String password)
             throws IOException {
@@ -158,7 +122,7 @@ int option;
         BufferedWriter buffered_writer = new BufferedWriter(writer);
         buffered_writer.write(newLine + username + ":" + password);
         buffered_writer.close();
-    }
+    }*/
 
     private static void addNewEventPlan(String clientName)
             throws IOException {
@@ -210,7 +174,7 @@ int option;
 
         return false;
     }
-
+    /*
     private static void getDirectoryList(String path) {
         File folder = new File(path);
         File[] listOfFiles = folder.listFiles();
@@ -227,7 +191,6 @@ int option;
 
     private static void reviewFile(String filePath) throws Exception {
         BufferedReader in = new BufferedReader(new FileReader(filePath));
-
         String line;
         while ((line = in.readLine()) != null) {
             System.out.println(line);
@@ -236,18 +199,14 @@ int option;
     }
     
     private static void comment(String filePath) throws Exception{
-           System.out.println("Please enter your comment:");
+        System.out.println("Please enter your comment:");
         String comment = scanner.next();
-    
-File eventPlan = new File(filePath );
-        
-
+        File eventPlan = new File(filePath );
         FileWriter writer = new FileWriter(eventPlan.getAbsolutePath(), true);
         BufferedWriter buffered_writer = new BufferedWriter(writer);
-
         buffered_writer.write(newLine + "comment:" + comment);
-        buffered_writer.close();
-        
-            
+        buffered_writer.close();        
     }
+    
+    */
 }
