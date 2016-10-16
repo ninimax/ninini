@@ -16,7 +16,7 @@ import java.util.Scanner;
  *
  * @author 44535
  */
-public class Service {
+public class Services extends Employee{
     int option1,option2;
     //private static File file;
     //private static Properties properties;
@@ -35,38 +35,38 @@ public class Service {
             switch(option2){
                 case 1:
                     System.out.println("List of documents in current folder:");
-                    getDirectoryList("./eventPlans");
+                    getDirectoryList("./src/sep/eventPlans");
                     System.out.println("Enter fileName:");
                     fileName = scanner.next();
-                    reviewFile("./eventPlans/" + fileName);
+                    reviewFile("./src/sep/eventPlans/" + fileName);
                     break;
                 case 2:
                     System.out.println("List of documents in current folder:");
-                    getDirectoryList("./tasks");
+                    getDirectoryList("./src/sep/tasks");
                     System.out.println("Enter fileName:");
                     fileName = scanner.next();
-                    reviewFile("./tasks/" + fileName);
+                    reviewFile("./src/sep/tasks/" + fileName);
                     break;
                 case 3:
                     System.out.println("List of documents in current folder:");
-                    getDirectoryList("./budgetrequest");
+                    getDirectoryList("./src/sep/budgetrequest");
                     System.out.println("Enter fileName:");
                     fileName = scanner.next();
-                    reviewFile("./budgetrequest/" + fileName);
+                    reviewFile("./src/sep/budgetrequest/" + fileName);
                     break;
                 case 4:
                     System.out.println("List of documents in current folder:");
                     getDirectoryList("./resourcerequest");
                     System.out.println("Enter fileName:");
                     fileName = scanner.next();
-                    reviewFile("./resourcerequest/" + fileName);
+                    reviewFile("./src/sep/resourcerequest/" + fileName);
                     break;
                 case 5:
                     System.out.println("List of documents in current folder:");
-                    getDirectoryList("./plans");
+                    getDirectoryList("./src/sep/plans");
                     System.out.println("Enter fileName:");
                     fileName = scanner.next();
-                    reviewFile("./plans/" + fileName);
+                    reviewFile("./src/sep/plans/" + fileName);
                     break;
                 case 0:
             }
@@ -101,7 +101,7 @@ public class Service {
     
     private void addNewApplication(String clientName)
         throws IOException{
-        File newApplication = new File("./tasks/" + clientName + "_task.txt");
+        File newApplication = new File("./src/sep/tasks/" + clientName + "_task.txt");
         newApplication.createNewFile();
 
         FileWriter writer = new FileWriter(newApplication.getAbsolutePath(), true);
@@ -130,7 +130,7 @@ public class Service {
     
         private void addNewBudegetRequest(String clientName)
         throws IOException{
-        File newApplication = new File("./budgetrequest/" + clientName + "_budgetrequest.txt");
+        File newApplication = new File("./src/sep/budgetrequest/" + clientName + "_budgetrequest.txt");
         newApplication.createNewFile();
 
         FileWriter writer = new FileWriter(newApplication.getAbsolutePath(), true);
@@ -153,7 +153,7 @@ public class Service {
 
         private void addNewResourceRequest(String clientName)
         throws IOException{
-        File newApplication = new File("./resourcerequest/" + clientName + "_resourcerequest.txt");
+        File newApplication = new File("./src/sep/resourcerequest/" + clientName + "_resourcerequest.txt");
         newApplication.createNewFile();
 
         FileWriter writer = new FileWriter(newApplication.getAbsolutePath(), true);
@@ -173,28 +173,6 @@ public class Service {
         */
         buffered_writer.close();
         }        
-    
-    private static void getDirectoryList(String path) {
-        File folder = new File(path);
-        File[] listOfFiles = folder.listFiles();
-
-        for (int i = 0; i < listOfFiles.length; i++) {
-            if (listOfFiles[i].isFile()) {
-                System.out.println(listOfFiles[i].getName());
-            } else if (listOfFiles[i].isDirectory()) {
-                System.out.println("Directory " + listOfFiles[i].getName());
-            }
-        }
-
-    }
-    private static void reviewFile(String filePath) throws Exception {
-        BufferedReader in = new BufferedReader(new FileReader(filePath));
-
-        String line;
-        while ((line = in.readLine()) != null) {
-            System.out.println(line);
-        }
-        in.close();
-    }    
+       
 }
 

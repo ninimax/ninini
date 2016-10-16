@@ -12,12 +12,11 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Properties;
 import java.util.Scanner;
-
 /**
  *
  * @author 44535
  */
-public class admin {
+public class Admin extends Employee {
     int option1,option2;
     //private static File file;
     //private static Properties properties;
@@ -31,17 +30,17 @@ public class admin {
             switch(option1){
                 case 1:
                     System.out.println("List of documents in current folder:");
-                    getDirectoryList("./eventPlans");
+                    getDirectoryList("./src/sep/eventPlans");
                     System.out.println("Enter fileName:");
                     fileName = scanner.next();
-                    reviewFile("./eventPlans/" + fileName);
+                    reviewFile("./src/sep/eventPlans/" + fileName);
                     break;
                 case 2:
                     System.out.println("List of documents in current folder:");
-                    getDirectoryList("./eventPlans");
+                    getDirectoryList("./src/sep/eventPlans");
                     System.out.println("Enter fileName:");
                     fileName = scanner.next();
-                    decision("./eventPlans/" + fileName);
+                    decision("./src/sep/eventPlans/" + fileName);
                     break;
                 case 0:
                     return;
@@ -50,28 +49,7 @@ public class admin {
                     
         }
     }
-    private static void reviewFile(String filePath) throws Exception {
-        BufferedReader in = new BufferedReader(new FileReader(filePath));
 
-        String line;
-        while ((line = in.readLine()) != null) {
-            System.out.println(line);
-        }
-        in.close();
-    }   
-    
-    private static void getDirectoryList(String path) {
-        File folder = new File(path);
-        File[] listOfFiles = folder.listFiles();
-
-        for (int i = 0; i < listOfFiles.length; i++) {
-            if (listOfFiles[i].isFile()) {
-                System.out.println(listOfFiles[i].getName());
-            } else if (listOfFiles[i].isDirectory()) {
-                System.out.println("Directory " + listOfFiles[i].getName());
-            }
-        }
-    }   
     private static void decision(String filePath) throws Exception{
         System.out.println("Please enter your decision:");
         String decision = scanner.next();

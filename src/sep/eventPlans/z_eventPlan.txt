@@ -7,3 +7,4 @@ nbrOfAttendees:z
 preference:z
 budgetExpectation:z
 comment:zjvuq1
+decision:sakf

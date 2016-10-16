@@ -11,6 +11,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Properties;
 import java.util.Scanner;
+import static javafx.application.Platform.exit;
 
 public class SEP {
 
@@ -28,92 +29,109 @@ public class SEP {
 
         properties = new Properties();
 
-        System.out.println("Enter job title:");
-        String title = scanner.next();
+        while (true) {
+            System.out.println("Enter job title (enter 'quit' to quit program):");
+            String title = scanner.next();
 
-        switch (title) {
-            case "admin":
-                file = new File("./admin.txt");
-                break;
-            case "production":
-                file = new File("./production.txt");
-                break;
-            case "customerService":
-                file = new File("./customerService.txt");
-                break;
-                case "financial":
-                file = new File("./financial.txt");
-                break;
-            case "services":
-                file = new File("./services.txt");
-                break;
-            case "subteam":
-                file = new File("./subteam.txt");
-                break;
-            default:
-                System.out.println("NO SUCH JOB TITLE!");
-                break;
-        }
-        properties.load(new FileInputStream(file.getAbsolutePath()));
-
-        //Scanner scanner = new Scanner(System.in);
-        System.out.println("Enter username:");
-        String username = scanner.next();
-        System.out.println("Enter password:");
-
-        String password = scanner.next();
-
-        if (!file.exists()) {
-            file.createNewFile();
-        }
-
-        Boolean doesTheKeyValuePairExist
-                = checkIfKeyValuePairExists(
-                        username, password);
-
-        if (!doesTheKeyValuePairExist) {
-            System.err.println("Sorry, can't do it!");
-        } else {
-            System.out.println("Valid stuff, yo!");
-
-            String fileName="";
-int option;
             switch (title) {
                 case "admin":
-                    admin newadmin=new admin();
-                    newadmin.process();
+                    file = new File("./src/sep/credential/admin.txt");
                     break;
                 case "production":
-                    break;
-                case "financial":
-                    financial newfinancial=new financial();
-                    newfinancial.process();
+                    file = new File("./src/sep/credential/production.txt");
                     break;
                 case "customerService":
-
-                    System.out.println("Please type in client name: ");
-                    String clientName = scanner.next();
-                    addNewEventPlan(clientName);
+                    file = new File("./src/sep/credential/customerService.txt");
+                    break;
+                case "financial":
+                    file = new File("./src/sep/credential/financial.txt");
                     break;
                 case "services":
-                    Service newservice=new Service();
-                    newservice.process();
+                    file = new File("./src/sep/credential/services.txt");
                     break;
                 case "subteam":
-                    subTeam newsubteam=new subTeam();
-                    newsubteam.process();
+                    file = new File("./src/sep/credential/subteam.txt");
                     break;
+                case "hrassistant":
+                    file = new File("./src/sep/credential/hrassistant.txt");
+                    break;
+                 case "hr":
+                    file = new File("./src/sep/credential/hr.txt");
+                    break;
+                case "quit":
+                    System.exit(0);
+                default:
+                    System.out.println("NO SUCH JOB TITLE!");
+                    System.exit(0);
             }
-            //System.out.println("Please type in record nbr: ");
-            //int recordNbr = scanner.nextInt();
+            properties.load(new FileInputStream(file.getAbsolutePath()));
 
-            //recordNbr +=1;
-            //System.out.println("now: "+recordNbr);
-            //properties.setProperty("lastSeq", Integer.toString(recordNbr));
-            //TODO change seq number
+            //Scanner scanner = new Scanner(System.in);
+            System.out.println("Enter username:");
+            String username = scanner.next();
+            System.out.println("Enter password:");
+
+            String password = scanner.next();
+
+            if (!file.exists()) {
+                file.createNewFile();
+            }
+
+            Boolean doesTheKeyValuePairExist
+                    = checkIfKeyValuePairExists(
+                            username, password);
+
+            if (!doesTheKeyValuePairExist) {
+                System.err.println("Sorry, can't do it!");
+            } else {
+                System.out.println("Valid stuff, yo!");
+
+                String fileName = "";
+                int option;
+                switch (title) {
+                    case "admin":
+                        Admin newadmin = new Admin();
+                        newadmin.process();
+                        break;
+                    case "production":
+                        break;
+                    case "financial":
+                        Financial newfinancial = new Financial();
+                        newfinancial.process();
+                        break;
+                    case "customerService":
+
+                        System.out.println("Please type in client name: ");
+                        String clientName = scanner.next();
+                        addNewEventPlan(clientName);
+                        break;
+                    case "services":
+                        Services newservice = new Services();
+                        newservice.process();
+                        break;
+                    case "subteam":
+                        SubTeam newsubteam = new SubTeam();
+                        newsubteam.process();
+                        break;
+                    case "hrassistant":
+                        HRAssistant newhrassistant = new HRAssistant();
+                        newhrassistant.process();
+                    case "hr":
+                        HR newhr = new HR();
+                        newhr.process();
+                }
+                //System.out.println("Please type in record nbr: ");
+                //int recordNbr = scanner.nextInt();
+
+                //recordNbr +=1;
+                //System.out.println("now: "+recordNbr);
+                //properties.setProperty("lastSeq", Integer.toString(recordNbr));
+                //TODO change seq number
+            }
+
         }
-
     }
+
     /*
     private static void addNewCredentials(
             String username, String password)
@@ -123,7 +141,6 @@ int option;
         buffered_writer.write(newLine + username + ":" + password);
         buffered_writer.close();
     }*/
-
     private static void addNewEventPlan(String clientName)
             throws IOException {
 
@@ -208,5 +225,5 @@ int option;
         buffered_writer.close();        
     }
     
-    */
+     */
 }

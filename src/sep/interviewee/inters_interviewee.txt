@@ -1,0 +1,6 @@
+
+interviewee's name:inters
+name:inters
+age:12
+gender:1
+expectedPosition:dav
