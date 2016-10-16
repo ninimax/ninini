@@ -44,6 +44,9 @@ public class SEP {
                 case "financial":
                 file = new File("./financial.txt");
                 break;
+            case "services":
+                file = new File("./services.txt");
+                break;
             default:
                 System.out.println("NO SUCH JOB TITLE!");
                 break;
@@ -104,6 +107,8 @@ int option;
                     reviewFile("./eventPlans/" + fileName);
                         break;
                     case 2:
+                        System.out.println("List of documents in current folder:");
+                    getDirectoryList("./eventPlans");
                         System.out.println("Enter fileName:");
                     fileName = scanner.next();
                         comment("./eventPlans/" + fileName);
@@ -123,7 +128,10 @@ int option;
                     String clientName = scanner.next();
                     addNewEventPlan(clientName);
                     break;
-
+                case "services":
+                    Service newservice=new Service();
+                    newservice.process();
+                    break;
             }
             //System.out.println("Please type in record nbr: ");
             //int recordNbr = scanner.nextInt();
@@ -231,11 +239,6 @@ File eventPlan = new File(filePath );
         BufferedWriter buffered_writer = new BufferedWriter(writer);
 
         buffered_writer.write(newLine + "comment:" + comment);
-    
-    
-        
-
-        
         buffered_writer.close();
         
             
