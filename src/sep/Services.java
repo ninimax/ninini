@@ -56,7 +56,7 @@ public class Services extends Employee{
                     break;
                 case 4:
                     System.out.println("List of documents in current folder:");
-                    getDirectoryList("./resourcerequest");
+                    getDirectoryList("./src/sep/resourcerequest");
                     System.out.println("Enter fileName:");
                     fileName = scanner.next();
                     reviewFile("./src/sep/resourcerequest/" + fileName);

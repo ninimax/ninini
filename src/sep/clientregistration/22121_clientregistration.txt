@@ -1,0 +1,4 @@
+
+clientName:22121
+eventType:1221
+dateFrom:2323

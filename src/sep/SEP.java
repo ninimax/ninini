@@ -43,6 +43,9 @@ public class SEP {
                 case "customerService":
                     file = new File("./src/sep/credential/customerService.txt");
                     break;
+                case "seniorCustomerService":
+                    file = new File("./src/sep/credential/seniorCustomerService.txt");
+                    break;
                 case "financial":
                     file = new File("./src/sep/credential/financial.txt");
                     break;
@@ -100,10 +103,12 @@ public class SEP {
                         newfinancial.process();
                         break;
                     case "customerService":
-
-                        System.out.println("Please type in client name: ");
-                        String clientName = scanner.next();
-                        addNewEventPlan(clientName);
+                        CustomerService newcustomerservice=new CustomerService();
+                        newcustomerservice.process();
+                        break;
+                    case "seniorCustomerService":
+                        SeniorCustomerService newseniorcustomerservice=new SeniorCustomerService();
+                        newseniorcustomerservice.process();
                         break;
                     case "services":
                         Services newservice = new Services();
@@ -116,9 +121,11 @@ public class SEP {
                     case "hrassistant":
                         HRAssistant newhrassistant = new HRAssistant();
                         newhrassistant.process();
+                        break;
                     case "hr":
                         HR newhr = new HR();
                         newhr.process();
+                        break;
                 }
                 //System.out.println("Please type in record nbr: ");
                 //int recordNbr = scanner.nextInt();
@@ -140,7 +147,7 @@ public class SEP {
         BufferedWriter buffered_writer = new BufferedWriter(writer);
         buffered_writer.write(newLine + username + ":" + password);
         buffered_writer.close();
-    }*/
+    }
     private static void addNewEventPlan(String clientName)
             throws IOException {
 
@@ -179,7 +186,7 @@ public class SEP {
 
         buffered_writer.close();
 
-    }
+    }*/
 
     private static Boolean checkIfKeyValuePairExists(String username, String password) {
         for (String key
