@@ -30,7 +30,7 @@ public class Service {
         option1 = scanner.nextInt();
         switch(option1){
         case 1:
-            System.out.println("What kind of file you want to review?! 1-Event Plan 2-Tasks 3-Budget Request 0-quit");
+            System.out.println("What kind of file you want to review?! 1-Event Plan 2-Tasks 3-Budget Request 4-Resource Request 5-Subteam Plans 0-quit");
             option2 = scanner.nextInt();
             switch(option2){
                 case 1:
@@ -54,11 +54,25 @@ public class Service {
                     fileName = scanner.next();
                     reviewFile("./budgetrequest/" + fileName);
                     break;
+                case 4:
+                    System.out.println("List of documents in current folder:");
+                    getDirectoryList("./resourcerequest");
+                    System.out.println("Enter fileName:");
+                    fileName = scanner.next();
+                    reviewFile("./resourcerequest/" + fileName);
+                    break;
+                case 5:
+                    System.out.println("List of documents in current folder:");
+                    getDirectoryList("./plans");
+                    System.out.println("Enter fileName:");
+                    fileName = scanner.next();
+                    reviewFile("./plans/" + fileName);
+                    break;
                 case 0:
             }
             break;
         case 2:
-            System.out.println("What kind of file you want to create?! 1-Tasks 2-Budget Request 0-quit");
+            System.out.println("What kind of file you want to create?! 1-Tasks 2-Budget Request 3-Resource Request 0-quit");
             option2 = scanner.nextInt();
             switch(option2){
                 case 1:
@@ -70,6 +84,11 @@ public class Service {
                     System.out.println("Enter fileName:");
                     fileName = scanner.next();
                     addNewBudegetRequest(fileName);
+                    break;
+                case 3:
+                    System.out.println("Enter fileName:");
+                    fileName = scanner.next();
+                    addNewResourceRequest(fileName);
                     break;
                 case 0:
                     break;
@@ -132,6 +151,28 @@ public class Service {
         buffered_writer.close();
         }
 
+        private void addNewResourceRequest(String clientName)
+        throws IOException{
+        File newApplication = new File("./resourcerequest/" + clientName + "_resourcerequest.txt");
+        newApplication.createNewFile();
+
+        FileWriter writer = new FileWriter(newApplication.getAbsolutePath(), true);
+        BufferedWriter buffered_writer = new BufferedWriter(writer);
+        /*
+        buffered_writer.write(newLine + "clientName:" + clientName);
+
+        buffered_writer.write(newLine + "RequestingDepartment:Services");
+        
+        System.out.println("Please enter required amount:");
+        String requiredAmount = scanner.next();
+        buffered_writer.write(newLine + "requiredAmount:" + requiredAmount);
+        
+        System.out.println("Please enter Reason:");
+        String reason = scanner.next();
+        buffered_writer.write(newLine + "Description:" + reason);
+        */
+        buffered_writer.close();
+        }        
     
     private static void getDirectoryList(String path) {
         File folder = new File(path);
@@ -156,3 +197,4 @@ public class Service {
         in.close();
     }    
 }
+

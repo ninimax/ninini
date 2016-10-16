@@ -47,6 +47,9 @@ public class SEP {
             case "services":
                 file = new File("./services.txt");
                 break;
+            case "subteam":
+                file = new File("./subteam.txt");
+                break;
             default:
                 System.out.println("NO SUCH JOB TITLE!");
                 break;
@@ -99,24 +102,24 @@ int option;
                     break;
                     case 1:
                          System.out.println("List of documents in current folder:");
-                    getDirectoryList("./eventPlans");
+                        getDirectoryList("./eventPlans");
 
-                    System.out.println("Enter fileName:");
-                    fileName = scanner.next();
+                        System.out.println("Enter fileName:");
+                        fileName = scanner.next();
 
-                    reviewFile("./eventPlans/" + fileName);
+                        reviewFile("./eventPlans/" + fileName);
                         break;
                     case 2:
                         System.out.println("List of documents in current folder:");
-                    getDirectoryList("./eventPlans");
+                        getDirectoryList("./eventPlans");
                         System.out.println("Enter fileName:");
-                    fileName = scanner.next();
+                        fileName = scanner.next();
                         comment("./eventPlans/" + fileName);
                         
                         
                         break;
                         default:System.out.println("No such option!");
-                }
+                    }
                     
                    
                     
@@ -131,6 +134,10 @@ int option;
                 case "services":
                     Service newservice=new Service();
                     newservice.process();
+                    break;
+                case "subteam":
+                    subTeam newsubteam=new subTeam();
+                    newsubteam.process();
                     break;
             }
             //System.out.println("Please type in record nbr: ");
