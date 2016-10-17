@@ -24,7 +24,7 @@ public class Financial extends Employee {
     //private static File file;
     //private static Properties properties;
     private static String newLine = System.lineSeparator();
-    private static Scanner scanner = new Scanner(System.in);
+    //private static Scanner scanner = new Scanner(System.in);
     private String fileName;
 
     public void process() throws Exception {
@@ -70,7 +70,7 @@ public class Financial extends Employee {
         }
     }
 
-    private static void comment(String filePath) throws Exception {
+    private void comment(String filePath) throws Exception {
         System.out.println("Please enter your comment:");
         String comment = scanner.next();
         File eventPlan = new File(filePath);

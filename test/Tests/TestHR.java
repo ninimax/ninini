@@ -5,13 +5,17 @@
  */
 package Tests;
 
-import sep.HRAssistant;
 import java.io.ByteArrayInputStream;
 import java.io.InputStream;
+import sep.HR;
 
-public class TestHRAssistant {
-
-    static String input;
+/**
+ *
+ * @author Sean
+ */
+public class TestHR {
+        
+         static String input;
     static InputStream stdin;
 
     public static void main(String[] args) throws Exception {
@@ -28,8 +32,8 @@ public class TestHRAssistant {
 
         try {
             System.setIn(new ByteArrayInputStream(input.getBytes()));
-            HRAssistant testHRAssistant = new HRAssistant();
-            testHRAssistant.process();
+            HR testHR = new HR();
+            testHR.process();
 
         } finally {
             System.setIn(stdin);
@@ -44,8 +48,8 @@ public class TestHRAssistant {
 
         try {
             System.setIn(new ByteArrayInputStream(input.getBytes()));
-            HRAssistant testHRAssistant = new HRAssistant();
-            testHRAssistant.process();
+            HR testHR = new HR();
+            testHR.process();
 
         } finally {
             System.setIn(stdin);
@@ -54,14 +58,14 @@ public class TestHRAssistant {
     }
 
     public static void TestCase3() throws Exception {
-        input = "3\r\n" + "hugo\r\n" + "21\r\n" + "1\r\n" + "developer\r\n" + "0\r\n";
+        input = "3\r\n" + "mk_interviewee.txt\r\n" + "1\r\n" + "0\r\n";
 
         stdin = System.in;
 
         try {
             System.setIn(new ByteArrayInputStream(input.getBytes()));
-            HRAssistant testHRAssistant = new HRAssistant();
-            testHRAssistant.process();
+            HR testHR = new HR();
+            testHR.process();
 
         } finally {
             System.setIn(stdin);
@@ -76,8 +80,8 @@ public class TestHRAssistant {
 
         try {
             System.setIn(new ByteArrayInputStream(input.getBytes()));
-            HRAssistant testHRAssistant = new HRAssistant();
-            testHRAssistant.process();
+            HR testHR = new HR();
+            testHR.process();
 
         } finally {
             System.setIn(stdin);

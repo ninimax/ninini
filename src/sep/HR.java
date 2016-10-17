@@ -12,7 +12,7 @@ public class HR extends Employee {
     private String fileName;
 
     @Override
-    void process() throws Exception {
+    public void process() throws Exception {
         while (true) {
             System.out.println("You can either 1-Review resource request; 2-Review interviewee; 3-Decide to recruit interviewee 0-quit ");
             int option1 = scanner.nextInt();
@@ -58,7 +58,7 @@ public class HR extends Employee {
         }
     }
 
-    private void recruitInterviewee(String intervieweeName)
+    public void recruitInterviewee(String intervieweeName)
             throws IOException {
         File newApplication = new File("./src/sep/interviewee/" + intervieweeName + "_interviewee.txt");
         newApplication.createNewFile();

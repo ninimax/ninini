@@ -5,11 +5,13 @@
  */
 package Tests;
 
-import sep.HRAssistant;
 import java.io.ByteArrayInputStream;
 import java.io.InputStream;
+import sep.SubTeam;
 
-public class TestHRAssistant {
+
+public class TestSubTeam {
+        
 
     static String input;
     static InputStream stdin;
@@ -22,46 +24,14 @@ public class TestHRAssistant {
     }
 
     public static void TestCase1() throws Exception {
-        input = "1\r\n" + "reszq_resourcerequest.txt\r\n" + "0\r\n";
+        input = "1\r\n"+"1\r\n" + "sasa_plan.txt\r\n" + "0\r\n";
 
         stdin = System.in;
 
         try {
             System.setIn(new ByteArrayInputStream(input.getBytes()));
-            HRAssistant testHRAssistant = new HRAssistant();
-            testHRAssistant.process();
-
-        } finally {
-            System.setIn(stdin);
-        }
-        System.out.println("\u001B[32m" + "TEST OK");
-    }
-
-    public static void TestCase2() throws Exception {
-        input = "2\r\n" + "mk_interviewee.txt\r\n" + "0\r\n";
-
-        stdin = System.in;
-
-        try {
-            System.setIn(new ByteArrayInputStream(input.getBytes()));
-            HRAssistant testHRAssistant = new HRAssistant();
-            testHRAssistant.process();
-
-        } finally {
-            System.setIn(stdin);
-        }
-        System.out.println("\u001B[32m" + "TEST OK");
-    }
-
-    public static void TestCase3() throws Exception {
-        input = "3\r\n" + "hugo\r\n" + "21\r\n" + "1\r\n" + "developer\r\n" + "0\r\n";
-
-        stdin = System.in;
-
-        try {
-            System.setIn(new ByteArrayInputStream(input.getBytes()));
-            HRAssistant testHRAssistant = new HRAssistant();
-            testHRAssistant.process();
+            SubTeam testSubTeam = new SubTeam();
+            testSubTeam.process();
 
         } finally {
             System.setIn(stdin);
@@ -69,6 +39,37 @@ public class TestHRAssistant {
         System.out.println("\u001B[32m" + "TEST OK");
     }
     
+    public static void TestCase2() throws Exception {
+        input = "1\r\n"+"2\r\n" + "fsdf_task.txt\r\n" + "0\r\n";
+
+        stdin = System.in;
+
+        try {
+            System.setIn(new ByteArrayInputStream(input.getBytes()));
+            SubTeam testSubTeam = new SubTeam();
+            testSubTeam.process();
+
+        } finally {
+            System.setIn(stdin);
+        }
+        System.out.println("\u001B[32m" + "TEST OK");
+    }
+    public static void TestCase3() throws Exception {
+        input = "2\r\n"+"1\r\n" + "mzksl\r\n"+"plandetails\r\n"+"9998\r\n"+"nocomment\r\n" + "0\r\n";
+
+        stdin = System.in;
+
+        try {
+            System.setIn(new ByteArrayInputStream(input.getBytes()));
+            SubTeam testSubTeam = new SubTeam();
+            testSubTeam.process();
+
+        } finally {
+            System.setIn(stdin);
+        }
+        System.out.println("\u001B[32m" + "TEST OK");
+    }
+
     public static void TestCase4() throws Exception {
         input = "0\r\n";
 
@@ -76,8 +77,8 @@ public class TestHRAssistant {
 
         try {
             System.setIn(new ByteArrayInputStream(input.getBytes()));
-            HRAssistant testHRAssistant = new HRAssistant();
-            testHRAssistant.process();
+            SubTeam testSubTeam = new SubTeam();
+            testSubTeam.process();
 
         } finally {
             System.setIn(stdin);

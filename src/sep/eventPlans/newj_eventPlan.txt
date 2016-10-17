@@ -1,0 +1,8 @@
+
+clientName:newj
+eventType:isu
+dateFrom:19999999
+dateTo:19999999
+nbrOfAttendees:20
+preference:breakfast
+budgetExpectation:20

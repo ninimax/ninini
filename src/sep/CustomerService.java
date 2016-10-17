@@ -23,7 +23,7 @@ public class CustomerService extends Employee{
     //private static File file;
     //private static Properties properties;
     private static  String newLine = System.lineSeparator();
-    private static  Scanner scanner = new Scanner(System.in);
+    //private static  Scanner scanner = new Scanner(System.in);
     private String fileName;
     public void process() throws Exception{
         while(true){
@@ -50,7 +50,7 @@ public class CustomerService extends Employee{
             }
         }
     }
-    private static void addNewEventPlan(String clientName)
+    private  void addNewEventPlan(String clientName)
             throws IOException {
 
         //EventPlan eventPlan = new EventPlan(clientName);
@@ -89,7 +89,7 @@ public class CustomerService extends Employee{
         buffered_writer.close();
 
     }
-    private static void addNewClientRegistration(String clientName)
+    private  void addNewClientRegistration(String clientName)
             throws IOException {
 
         //EventPlan eventPlan = new EventPlan(clientName);

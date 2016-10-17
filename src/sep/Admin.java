@@ -21,8 +21,9 @@ public class Admin extends Employee {
     //private static File file;
     //private static Properties properties;
     private static  String newLine = System.lineSeparator();
-    private static  Scanner scanner = new Scanner(System.in);
+    //private   Scanner scanner = new Scanner(System.in);
     private String fileName;
+    
     public void process() throws Exception{
         while(true){
             System.out.println("What do you want to do! 1-reviw 2-Make decision 0-quit");
@@ -33,7 +34,11 @@ public class Admin extends Employee {
                     getDirectoryList("./src/sep/eventPlans");
                     System.out.println("Enter fileName:");
                     fileName = scanner.next();
-                    reviewFile("./src/sep/eventPlans/" + fileName);
+                    try{
+                    reviewFile("./src/sep/eventPlans/" + fileName);}
+                    catch(Exception e){
+                    System.out.println("Error reading file! No such file!");
+                    }
                     break;
                 case 2:
                     System.out.println("List of documents in current folder:");
@@ -50,7 +55,8 @@ public class Admin extends Employee {
         }
     }
 
-    private static void decision(String filePath) throws Exception{
+    public  void decision(String filePath) throws Exception{
+        
         System.out.println("Please enter your decision:");
         String decision = scanner.next();
         File eventPlan = new File(filePath );
