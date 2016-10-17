@@ -1,0 +1,11 @@
+
+clientName:Sam
+eventType:Party
+dateFrom:11Sep2016
+dateTo:12Sep216
+nbrOfAttendees:500
+preference:decoration
+budgetExpectation:300000
+comment:nice decorations and lights
+decision:approved
+comment:goodplan

@@ -103,11 +103,11 @@ public class CustomerService extends Employee{
 
         System.out.println("Please enter client's phone number:");
         String phone = scanner.next();
-        buffered_writer.write(newLine + "eventType:" + phone);
+        buffered_writer.write(newLine + "phone:" + phone);
 
         System.out.println("Please enter client's address:");
         String address = scanner.next();
-        buffered_writer.write(newLine + "dateFrom:" + address);
+        buffered_writer.write(newLine + "address:" + address);
         
         buffered_writer.close();
 

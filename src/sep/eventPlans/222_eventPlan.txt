@@ -1,8 +1,0 @@
-
-clientName:222
-eventType:ddd
-dateFrom:fff
-dateTo:ggg
-nbrOfAttendees:hhh
-preference:eee
-budgetExpectation:qqq

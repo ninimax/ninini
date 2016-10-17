@@ -65,7 +65,7 @@ public class SEP {
                     System.exit(0);
                 default:
                     System.out.println("NO SUCH JOB TITLE!");
-                    System.exit(0);
+                    continue;
             }
             properties.load(new FileInputStream(file.getAbsolutePath()));
 
