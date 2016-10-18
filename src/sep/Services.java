@@ -66,17 +66,17 @@ public class Services extends Employee {
                             System.out.println("Enter fileName:");
                             fileName = scanner.next();
                             addNewApplication(fileName);
-                            break;
+                            continue;
                         case 2:
                             System.out.println("Enter fileName:");
                             fileName = scanner.next();
                             addNewBudegetRequest(fileName);
-                            break;
+                            continue;
                         case 3:
                             System.out.println("Enter fileName:");
                             fileName = scanner.next();
                             addNewResourceRequest(fileName);
-                            break;
+                            continue;
                         case 0:
                             break;
                     }
@@ -142,9 +142,17 @@ public class Services extends Employee {
             throws IOException {
         File newApplication = new File("./src/sep/resourcerequest/" + clientName + "_resourcerequest.txt");
         newApplication.createNewFile();
-
+           
         FileWriter writer = new FileWriter(newApplication.getAbsolutePath(), true);
         BufferedWriter buffered_writer = new BufferedWriter(writer);
+
+        System.out.println("Please enter resource titel:");
+        String resource = scanner.next();
+        buffered_writer.write(newLine + "resource:" + resource);
+
+        System.out.println("Please enter department:");
+        String department = scanner.next();
+        buffered_writer.write(newLine + "Department:" + department);
         buffered_writer.close();
     }
 

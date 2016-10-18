@@ -22,14 +22,14 @@ public class CustomerService extends Employee {
                     System.out.println("Enter client's name:");
                     fileName = scanner.next();
                     addNewEventPlan(fileName);
-                    break;
+                    continue;
                 case 2:
                     System.out.println("List of documents in current folder:");
                     getDirectoryList("./src/sep/clientregistration");
                     System.out.println("Enter client's name:");
                     fileName = scanner.next();
                     addNewClientRegistration(fileName);
-                    break;
+                    continue;
                 case 0:
                     return;
             }

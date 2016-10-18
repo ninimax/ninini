@@ -45,7 +45,7 @@ public class SubTeam extends Employee {
                             System.out.println("Enter fileName:");
                             fileName = scanner.next();
                             addNewPlan(fileName);
-                            break;
+                            continue;
                         case 0:
                             break;
                     }
