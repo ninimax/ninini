@@ -1,17 +1,14 @@
 package Tests;
 
 import java.io.BufferedReader;
-import java.io.ByteArrayInputStream;
 import java.io.File;
 import java.io.FileReader;
-import java.io.InputStream;
-import sep.Employee;
 
 public class TestEmployee {
 
     public static void main(String[] args) throws Exception {
-TestreviewFile("./src/sep/plans/sasa_plan.txt");
-TestGetDirectoryList("./src/sep/plans/"); 
+        TestreviewFile("./src/sep/plans/sasa_plan.txt");
+        TestGetDirectoryList("./src/sep/plans/");
     }
 
     static void TestreviewFile(String filePath) throws Exception {

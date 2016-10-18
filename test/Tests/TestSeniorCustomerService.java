@@ -1,20 +1,10 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Tests;
 
 import java.io.ByteArrayInputStream;
 import java.io.InputStream;
 import sep.SeniorCustomerService;
 
-/**
- *
- * @author Sean
- */
 public class TestSeniorCustomerService {
-        
 
     static String input;
     static InputStream stdin;

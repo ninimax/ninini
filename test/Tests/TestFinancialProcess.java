@@ -15,6 +15,7 @@ public class TestFinancialProcess {
         TestCaseTwo();
         TestCaseThree();
         TestCaseFour();
+        TestCaseFive();
     }
 
     /*
@@ -35,26 +36,12 @@ public class TestFinancialProcess {
         }
     }
 
-    public static void TestCaseFive() throws Exception {
-        input = "1\r\n" + "1\r\n" + "sam_eventPlan.txt\r\n" + "0\r\n";
-
-        stdin = System.in;
-        try {
-            System.setIn(new ByteArrayInputStream(input.getBytes()));
-            Financial testFinancial = new Financial();
-            testFinancial.process();
-
-        } finally {
-            System.setIn(stdin);
-        }
-    }
-
     /*
     Test case two:
     "1"- event plan -> "2"-comment -> "sam_eventPlan.txt" ->"goodplan" ->"0"-quit -> "0"-quit
      */
     public static void TestCaseTwo() throws Exception {
-        String input = "\r\n" + "1\r\n" + "2\r\n" + "sam_eventPlan.txt\r\n" + "goodplan\r\n" + "0\r\n";
+        String input = "1\r\n" + "2\r\n" + "sam_eventPlan.txt\r\n" + "goodplancomment\r\n" + "0\r\n";
         System.setIn(System.in);
         System.setIn(new ByteArrayInputStream(input.getBytes()));
         Financial testFinancial = new Financial();
@@ -92,7 +79,17 @@ public class TestFinancialProcess {
         testFinancial.process();
         System.out.println("\u001B[32m" + "TEST OK");
         System.setIn(stdin);
-
     }
+    
+      public static void TestCaseFive() throws Exception {
+        String input = "0\r\n";
 
+        InputStream stdin = System.in;
+
+        System.setIn(new ByteArrayInputStream(input.getBytes()));
+        Financial testFinancial = new Financial();
+        testFinancial.process();
+        System.out.println("\u001B[32m" + "TEST OK");
+        System.setIn(stdin);
+    }
 }

@@ -1,35 +1,21 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package sep;
 
-import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
-import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.Properties;
-import java.util.Scanner;
 
-/**
- *
- * @author 44535
- */
-public class CustomerService extends Employee{
-    int option1,option2;
-    //private static File file;
-    //private static Properties properties;
-    private static  String newLine = System.lineSeparator();
-    //private static  Scanner scanner = new Scanner(System.in);
+public class CustomerService extends Employee {
+
+    int option1, option2;
+    private static String newLine = System.lineSeparator();
     private String fileName;
-    public void process() throws Exception{
-        while(true){
+
+    public void process() throws Exception {
+        while (true) {
             System.out.println("What do you want to do! 1-Creat event plan 2-Client registration 0-quit");
             option1 = scanner.nextInt();
-            switch(option1){
+            switch (option1) {
                 case 1:
                     System.out.println("List of documents in current folder:");
                     getDirectoryList("./src/sep/eventPlans");
@@ -46,14 +32,11 @@ public class CustomerService extends Employee{
                     break;
                 case 0:
                     return;
-                    
             }
         }
     }
-    private  void addNewEventPlan(String clientName)
-            throws IOException {
 
-        //EventPlan eventPlan = new EventPlan(clientName);
+    private void addNewEventPlan(String clientName) throws IOException {
         File eventPlan = new File("./src/sep/eventPlans/" + clientName + "_eventPlan.txt");
         eventPlan.createNewFile();
 
@@ -87,12 +70,10 @@ public class CustomerService extends Employee{
         buffered_writer.write(newLine + "budgetExpectation:" + budgetExpectation);
 
         buffered_writer.close();
-
     }
-    private  void addNewClientRegistration(String clientName)
-            throws IOException {
 
-        //EventPlan eventPlan = new EventPlan(clientName);
+    private void addNewClientRegistration(String clientName)
+            throws IOException {
         File eventPlan = new File("./src/sep/clientregistration/" + clientName + "_clientregistration.txt");
         eventPlan.createNewFile();
 
@@ -108,8 +89,7 @@ public class CustomerService extends Employee{
         System.out.println("Please enter client's address:");
         String address = scanner.next();
         buffered_writer.write(newLine + "address:" + address);
-        
-        buffered_writer.close();
 
-    }        
+        buffered_writer.close();
+    }
 }

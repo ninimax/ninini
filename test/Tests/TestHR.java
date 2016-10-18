@@ -1,21 +1,12 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Tests;
 
 import java.io.ByteArrayInputStream;
 import java.io.InputStream;
 import sep.HR;
 
-/**
- *
- * @author Sean
- */
 public class TestHR {
-        
-         static String input;
+
+    static String input;
     static InputStream stdin;
 
     public static void main(String[] args) throws Exception {
@@ -72,7 +63,7 @@ public class TestHR {
         }
         System.out.println("\u001B[32m" + "TEST OK");
     }
-    
+
     public static void TestCase4() throws Exception {
         input = "0\r\n";
 

@@ -58,8 +58,7 @@ public class HR extends Employee {
         }
     }
 
-    public void recruitInterviewee(String intervieweeName)
-            throws IOException {
+    public void recruitInterviewee(String intervieweeName) throws IOException {
         File newApplication = new File("./src/sep/interviewee/" + intervieweeName + "_interviewee.txt");
         newApplication.createNewFile();
 

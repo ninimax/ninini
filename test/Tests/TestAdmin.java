@@ -1,18 +1,9 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Tests;
 
 import java.io.ByteArrayInputStream;
 import java.io.InputStream;
 import sep.Admin;
 
-/**
- *
- * @author Sean
- */
 public class TestAdmin {
 
     static String input;
@@ -22,7 +13,6 @@ public class TestAdmin {
         TestCase1();
         TestCase2();
         TestCase3();
-
     }
 
     public static void TestCase1() throws Exception {
@@ -42,7 +32,7 @@ public class TestAdmin {
     }
 
     public static void TestCase2() throws Exception {
-        input = "2\r\n" + "sam_eventPlan.txt\r\n" + "super2good\r\n" + "0\r\n";
+        input = "2\r\n" + "sam_eventPlan.txt\r\n" + "rejected\r\n" + "0\r\n";
 
         stdin = System.in;
 

@@ -7,7 +7,4 @@ nbrOfAttendees:500
 preference:decoration
 budgetExpectation:300000
 comment:nice decorations and lights
-decision:approved
-
-comment:goodplan
-comment:goodplan
+decision:rejected
