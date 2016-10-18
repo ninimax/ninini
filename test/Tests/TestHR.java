@@ -49,7 +49,7 @@ public class TestHR {
     }
 
     public static void TestCase3() throws Exception {
-        input = "3\r\n" + "mk_interviewee.txt\r\n" + "1\r\n" + "0\r\n";
+        input = "3\r\n" + "mk\r\n" + "1\r\n" + "0\r\n";
 
         stdin = System.in;
 
